@@ -15,7 +15,7 @@ class MasterSupplierExportImportController extends Controller
     }
 
     public function import(Request $request){
-        Excel::import(new ImportMasterSupplier, $request->file("file")->store("files"));
+        Excel::import(new ImportMasterSupplier, $request->file("file"));
         return redirect()->route("master_supplier.index")->with("success", strtoupper(str_replace("_", " ", "master_supplier")) . " berhasil diimpor.");
     }
 

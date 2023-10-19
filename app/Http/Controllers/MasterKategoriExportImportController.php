@@ -15,7 +15,7 @@ class MasterKategoriExportImportController extends Controller
     }
 
     public function import(Request $request){
-        Excel::import(new ImportMasterKategori, $request->file("file")->store("files"));
+        Excel::import(new ImportMasterKategori, $request->file("file"));
         return redirect()->route("master_kategori.index")->with("success", strtoupper(str_replace("_", " ", "master_kategori")) . " berhasil diimpor.");
     }
 

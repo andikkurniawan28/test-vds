@@ -27,13 +27,22 @@
 @section("table")
     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
+            <tr >
+                <th rowspan="2">{{ strtoupper(str_replace("_", " ", "id")) }}</th>
+                <th rowspan="2">{{ strtoupper(str_replace("_", " ", "kode_barang_internal")) }}</th>
+                <th rowspan="2">{{ strtoupper(str_replace("_", " ", "kode_barcode_asli")) }}</th>
+                <th rowspan="2">{{ strtoupper(str_replace("_", " ", "nama_barang")) }}</th>
+                <th rowspan="2">{{ strtoupper(str_replace("_", " ", "nama_singkat_barang")) }}</th>
+                <th rowspan="2">{{ strtoupper(str_replace("_", " ", "supplier")) }}</th>
+                <th rowspan="2">{{ strtoupper(str_replace("_", " ", "brand")) }}</th>
+                <th rowspan="2">{{ strtoupper(str_replace("_", " ", "kategori")) }}</th>
+                <th colspan="3">{{ strtoupper(str_replace("_", " ", "satuan_barang")) }}</th>
+                <th rowspan="2">{{ strtoupper("action") }}</th>
+            </tr>
             <tr>
-                <th>{{ strtoupper(str_replace("_", " ", "id")) }}</th>
-                <th>{{ strtoupper(str_replace("_", " ", "kode_barang_internal")) }}</th>
-                <th>{{ strtoupper(str_replace("_", " ", "kode_barcode_asli")) }}</th>
-                <th>{{ strtoupper(str_replace("_", " ", "nama_barang")) }}</th>
-                <th>{{ strtoupper(str_replace("_", " ", "nama_singkat_barang")) }}</th>
-                <th>{{ strtoupper("action") }}</th>
+                <th>{{ strtoupper(str_replace("_", " ", "1")) }}</th>
+                <th>{{ strtoupper(str_replace("_", " ", "2")) }}</th>
+                <th>{{ strtoupper(str_replace("_", " ", "3")) }}</th>
             </tr>
         </thead>
         <tbody>
@@ -44,6 +53,12 @@
                 <td>{{ $data->kode_barcode_asli }}</td>
                 <td>{{ $data->nama_barang }}</td>
                 <td>{{ $data->nama_singkat_barang }}</td>
+                <td>{{ $data->master_supplier->nama_supplier ?? "" }}</td>
+                <td>{{ $data->master_brand->nama_brand ?? "" }}</td>
+                <td>{{ $data->master_kategori->jenis_barang ?? "" }}</td>
+                <td>{{ $data->satuan_barang1->kode_satuan_barang ?? "" }}</td>
+                <td>{{ $data->satuan_barang2->kode_satuan_barang ?? "" }}</td>
+                <td>{{ $data->satuan_barang3->kode_satuan_barang ?? "" }}</td>
                 <td>
                     @include("components.action_group_button", [
                         "show"      => route("produk.show", $data->id),

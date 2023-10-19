@@ -15,7 +15,7 @@ class MasterBrandExportImportController extends Controller
     }
 
     public function import(Request $request){
-        Excel::import(new ImportMasterBrand, $request->file("file")->store("files"));
+        Excel::import(new ImportMasterBrand, $request->file("file"));
         return redirect()->route("master_brand.index")->with("success", strtoupper(str_replace("_", " ", "master_brand")) . " berhasil diimpor.");
     }
 

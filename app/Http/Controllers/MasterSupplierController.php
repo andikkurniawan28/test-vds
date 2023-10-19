@@ -12,7 +12,7 @@ class MasterSupplierController extends Controller
      */
     public function index()
     {
-        $master_suppliers = MasterSupplier::select(["id", "kode_supplier", "nama_supplier", "alamat", "kota"])->orderBy("id", "desc")->get();
+        $master_suppliers = MasterSupplier::select(["id", "kode_supplier", "nama_supplier", "brand", "alamat", "kota"])->orderBy("id", "desc")->get();
         return view("master_supplier.index", compact("master_suppliers"));
     }
 

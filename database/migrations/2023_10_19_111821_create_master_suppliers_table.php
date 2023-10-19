@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('master_suppliers', function (Blueprint $table) {
             $table->id();
             $table->string("kode_supplier")->nullable();
+            $table->string("brand")->nullable();
             $table->string("nama_supplier")->nullable();
             $table->text("alamat")->nullable();
             $table->text("kota")->nullable();

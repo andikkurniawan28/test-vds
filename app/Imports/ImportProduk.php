@@ -29,12 +29,12 @@ class ImportProduk implements ToModel, WithStartRow, WithMultipleSheets
            "kode_barcode_asli"          => $row[1],
            "nama_barang"                => $row[2],
            "nama_singkat_barang"        => $row[2],
-        //    "master_supplier_id"         => MasterSupplier::where("nama_supplier", $row[8])->get()->last()->id ?? NULL,
-        //    "master_brand_id"            => MasterBrand::where("kode_brand", $row[12])->get()->last()->id ?? NULL,
-        //    "master_kategori_id"         => MasterKategori::where("kode_jenis_barang", $row[13])->get()->last()->id ?? NULL,
-        //    "satuan_barang1"             => MasterSatuan::where("satuan_barang", $row[14])->get()->last()->id ?? NULL,
-        //    "satuan_barang2"             => MasterSatuan::where("satuan_barang", $row[15])->get()->last()->id ?? NULL,
-        //    "satuan_barang3"             => MasterSatuan::where("satuan_barang", $row[16])->get()->last()->id ?? NULL,
+           "master_supplier_id"         => MasterSupplier::where("kode_supplier", $row[11])->get()->last()->id ?? NULL,
+           "master_brand_id"            => MasterBrand::where("kode_brand", $row[12])->get()->last()->id ?? NULL,
+           "master_kategori_id"         => MasterKategori::where("kode_jenis_barang", $row[13])->get()->last()->id ?? NULL,
+           "satuan_barang1_id"          => MasterSatuan::where("kode_satuan_barang", $row[14])->get()->last()->id ?? NULL,
+           "satuan_barang2_id"          => MasterSatuan::where("kode_satuan_barang", $row[15])->get()->last()->id ?? NULL,
+           "satuan_barang3_id"          => MasterSatuan::where("kode_satuan_barang", $row[16])->get()->last()->id ?? NULL,
         ]);
     }
 

@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Produk;
+use App\Models\MasterBrand;
+use App\Models\MasterSatuan;
 use Illuminate\Http\Request;
+use App\Models\MasterKategori;
+use App\Models\MasterSupplier;
 
 class ProdukController extends Controller
 {
@@ -21,7 +25,11 @@ class ProdukController extends Controller
      */
     public function create()
     {
-        return view("produk.create");
+        $master_suppliers = MasterSupplier::orderBy("id", "asc")->get();
+        $master_brands = MasterBrand::orderBy("id", "asc")->get();
+        $master_kategoris = MasterKategori::orderBy("id", "asc")->get();
+        $master_satuans = MasterSatuan::orderBy("id", "asc")->get();
+        return view("produk.create", compact("master_suppliers", "master_brands", "master_kategoris", "master_satuans"));
     }
 
     /**
@@ -47,7 +55,11 @@ class ProdukController extends Controller
     public function edit($id)
     {
         $data = Produk::whereId($id)->get()->last();
-        return view("produk.edit", compact("data"));
+        $master_suppliers = MasterSupplier::orderBy("id", "asc")->get();
+        $master_brands = MasterBrand::orderBy("id", "asc")->get();
+        $master_kategoris = MasterKategori::orderBy("id", "asc")->get();
+        $master_satuans = MasterSatuan::orderBy("id", "asc")->get();
+        return view("produk.edit", compact("data", "master_suppliers", "master_brands", "master_kategoris", "master_satuans"));
     }
 
     /**

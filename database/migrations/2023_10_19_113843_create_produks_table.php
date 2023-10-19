@@ -17,15 +17,15 @@ return new class extends Migration
             $table->string("kode_barcode_asli")->nullable();
             $table->string("nama_barang")->nullable();
             $table->string("nama_singkat_barang")->nullable();
-            // $table->foreignId("master_supplier_id")->constrained()->onDelete("cascade");
-            // $table->foreignId("master_brand_id")->constrained()->onDelete("cascade");
-            // $table->foreignId("master_kategori_id")->constrained()->onDelete("cascade");
-            // $table->unsignedBigInteger("satuan_barang1");
-            // $table->unsignedBigInteger("satuan_barang2");
-            // $table->unsignedBigInteger("satuan_barang3");
-            // $table->foreign("satuan_barang1")->references("id")->on("master_satuans")->onDelete("cascade");
-            // $table->foreign("satuan_barang2")->references("id")->on("master_satuans")->onDelete("cascade");
-            // $table->foreign("satuan_barang3")->references("id")->on("master_satuans")->onDelete("cascade");
+            $table->foreignId("master_supplier_id")->nullable()->constrained()->onDelete("cascade");
+            $table->foreignId("master_brand_id")->nullable()->constrained()->onDelete("cascade");
+            $table->foreignId("master_kategori_id")->nullable()->constrained()->onDelete("cascade");
+            $table->unsignedBigInteger("satuan_barang1_id")->nullable();
+            $table->unsignedBigInteger("satuan_barang2_id")->nullable();
+            $table->unsignedBigInteger("satuan_barang3_id")->nullable();
+            $table->foreign("satuan_barang1_id")->references("id")->on("master_satuans")->onDelete("cascade");
+            $table->foreign("satuan_barang2_id")->references("id")->on("master_satuans")->onDelete("cascade");
+            $table->foreign("satuan_barang3_id")->references("id")->on("master_satuans")->onDelete("cascade");
         });
     }
 

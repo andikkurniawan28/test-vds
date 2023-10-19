@@ -30,6 +30,7 @@
             <tr>
                 <th>{{ strtoupper(str_replace("_", " ", "kode_supplier")) }}</th>
                 <th>{{ strtoupper(str_replace("_", " ", "nama_supplier")) }}</th>
+                <th>{{ strtoupper(str_replace("_", " ", "brand")) }}</th>
                 <th>{{ strtoupper(str_replace("_", " ", "alamat")) }}</th>
                 <th>{{ strtoupper(str_replace("_", " ", "kota")) }}</th>
                 <th>{{ strtoupper("action") }}</th>
@@ -40,6 +41,7 @@
             <tr>
                 <td>{{ $data->kode_supplier }}</td>
                 <td>{{ $data->nama_supplier }}</td>
+                <td>{{ $data->brand }}</td>
                 <td>{{ $data->alamat }}</td>
                 <td>{{ $data->kota }}</td>
                 <td>

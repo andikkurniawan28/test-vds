@@ -18,6 +18,7 @@ class ImportMasterSupplier implements ToModel, WithStartRow
         return new MasterSupplier([
            "kode_supplier"      => $row[1],
            "nama_supplier"      => $row[3],
+           "brand"              => $row[4],
            "alamat"             => $row[5],
            "kota"               => $row[6],
         ]);
