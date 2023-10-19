@@ -14,6 +14,8 @@ use App\Http\Controllers\MasterSatuanController;
 use App\Http\Controllers\MasterSatuanExportImportController;
 use App\Http\Controllers\MasterSupplierController;
 use App\Http\Controllers\MasterSupplierExportImportController;
+use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\ProdukExportImportController;
 
 // Authentication
 Route::get("login", [AuthController::class, "login"])->name("login");
@@ -35,27 +37,32 @@ Route::resource("master_brand", MasterBrandController::class)->middleware(["auth
 Route::resource("master_kategori", MasterKategoriController::class)->middleware(["auth", "is_admin"]);
 Route::resource("master_satuan", MasterSatuanController::class)->middleware(["auth", "is_admin"]);
 Route::resource("master_supplier", MasterSupplierController::class)->middleware(["auth", "is_admin"]);
+Route::resource("produk", ProdukController::class)->middleware(["auth", "is_admin"]);
 
 // Import View
 Route::get("master_brand-import", [MasterBrandExportImportController::class, "importView"])->name("master_brand-import-view")->middleware(["auth", "is_admin"]);
 Route::get("master_kategori-import", [MasterKategoriExportImportController::class, "importView"])->name("master_kategori-import-view")->middleware(["auth", "is_admin"]);
 Route::get("master_satuan-import", [MasterSatuanExportImportController::class, "importView"])->name("master_satuan-import-view")->middleware(["auth", "is_admin"]);
 Route::get("master_supplier-import", [MasterSupplierExportImportController::class, "importView"])->name("master_supplier-import-view")->middleware(["auth", "is_admin"]);
+Route::get("produk-import", [ProdukExportImportController::class, "importView"])->name("produk-import-view")->middleware(["auth", "is_admin"]);
 
 // Import
 Route::post("master_brand-import", [MasterBrandExportImportController::class, "import"])->name("master_brand-import")->middleware(["auth", "is_admin"]);
 Route::post("master_kategori-import", [MasterKategoriExportImportController::class, "import"])->name("master_kategori-import")->middleware(["auth", "is_admin"]);
 Route::post("master_satuan-import", [MasterSatuanExportImportController::class, "import"])->name("master_satuan-import")->middleware(["auth", "is_admin"]);
 Route::post("master_supplier-import", [MasterSupplierExportImportController::class, "import"])->name("master_supplier-import")->middleware(["auth", "is_admin"]);
+Route::post("produk-import", [ProdukExportImportController::class, "import"])->name("produk-import")->middleware(["auth", "is_admin"]);
 
 // Export
 Route::get("master_brand-export", [MasterBrandExportImportController::class, "export"])->name("master_brand-export")->middleware(["auth", "is_admin"]);
 Route::get("master_kategori-export", [MasterKategoriExportImportController::class, "export"])->name("master_kategori-export")->middleware(["auth", "is_admin"]);
 Route::get("master_satuan-export", [MasterSatuanExportImportController::class, "export"])->name("master_satuan-export")->middleware(["auth", "is_admin"]);
 Route::get("master_supplier-export", [MasterSupplierExportImportController::class, "export"])->name("master_supplier-export")->middleware(["auth", "is_admin"]);
+Route::get("produk-export", [ProdukExportImportController::class, "export"])->name("produk-export")->middleware(["auth", "is_admin"]);
 
 // Clear
 Route::get("master_brand-clear", [MasterBrandExportImportController::class, "clear"])->name("master_brand-clear")->middleware(["auth", "is_admin"]);
 Route::get("master_kategori-clear", [MasterKategoriExportImportController::class, "clear"])->name("master_kategori-clear")->middleware(["auth", "is_admin"]);
 Route::get("master_satuan-clear", [MasterSatuanExportImportController::class, "clear"])->name("master_satuan-clear")->middleware(["auth", "is_admin"]);
 Route::get("master_supplier-clear", [MasterSupplierExportImportController::class, "clear"])->name("master_supplier-clear")->middleware(["auth", "is_admin"]);
+Route::get("produk-clear", [ProdukExportImportController::class, "clear"])->name("produk-clear")->middleware(["auth", "is_admin"]);

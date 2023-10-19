@@ -13,6 +13,7 @@
                 <x-sidebar_item icon="filter" route="{{ route('master_kategori.index') }}" title="master_kategori"></x-sidebar_item>
                 <x-sidebar_item icon="asterisk" route="{{ route('master_satuan.index') }}" title="master_satuan"></x-sidebar_item>
                 <x-sidebar_item icon="truck" route="{{ route('master_supplier.index') }}" title="master_supplier"></x-sidebar_item>
+                <x-sidebar_item icon="box" route="{{ route('produk.index') }}" title="produk"></x-sidebar_item>
             <hr class="sidebar-divider d-none d-md-block">
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>

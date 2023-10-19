@@ -2,16 +2,16 @@
 
 namespace App\Exports;
 
-use App\Models\MasterSupplier;
+use App\Models\Produk;
 use Maatwebsite\Excel\Concerns\FromCollection;
 
-class ExportMasterSupplier implements FromCollection
+class ExportProduk implements FromCollection
 {
     /**
     * @return \Illuminate\Support\Collection
     */
     public function collection(){
-        $data = MasterSupplier::select(["kode_barang_internal", "kode_barcode_asli", "nama_barang", "kota"])->get();
+        $data = Produk::get();
         return $data;
     }
 }
