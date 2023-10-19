@@ -20,7 +20,7 @@ class MasterKategoriExportImportController extends Controller
     }
 
     public function export(){
-        return Excel::download(new ExportMasterKategori, "Master Kategori.xlsx");
+        return Excel::download(new ExportMasterKategori, strtoupper(str_replace("_", " ", "master_kategori")).".xlsx");
     }
 
     public function clear(){

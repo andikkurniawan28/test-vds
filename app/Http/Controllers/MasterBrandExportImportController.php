@@ -20,7 +20,7 @@ class MasterBrandExportImportController extends Controller
     }
 
     public function export(){
-        return Excel::download(new ExportMasterBrand, "Master Brand.xlsx");
+        return Excel::download(new ExportMasterBrand, strtoupper(str_replace("_", " ", "master_brand")).".xlsx");
     }
 
     public function clear(){
