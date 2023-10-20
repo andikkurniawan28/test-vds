@@ -28,7 +28,7 @@
     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
             <tr >
-                <th rowspan="2">{{ strtoupper(str_replace("_", " ", "id")) }}</th>
+                {{-- <th rowspan="2">{{ strtoupper(str_replace("_", " ", "id")) }}</th> --}}
                 <th rowspan="2">{{ strtoupper(str_replace("_", " ", "kode_barang_internal")) }}</th>
                 <th rowspan="2">{{ strtoupper(str_replace("_", " ", "kode_barcode_asli")) }}</th>
                 <th rowspan="2">{{ strtoupper(str_replace("_", " ", "nama_barang")) }}</th>
@@ -48,7 +48,7 @@
         <tbody>
             @foreach ($produks as $data)
             <tr>
-                <td>{{ $data->id }}</td>
+                {{-- <td>{{ $data->id }}</td> --}}
                 <td>{{ $data->kode_barang_internal }}</td>
                 <td>{{ $data->kode_barcode_asli }}</td>
                 <td>{{ $data->nama_barang }}</td>
