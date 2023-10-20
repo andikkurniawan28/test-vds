@@ -7,8 +7,8 @@
             </a>
             <hr class="sidebar-divider my-0">
                 <x-sidebar_item icon="tachometer-alt" route="{{ route('dashboard') }}" title="dashboard"></x-sidebar_item>
-                <x-sidebar_item icon="key" route="{{ route('role.index') }}" title="role"></x-sidebar_item>
-                <x-sidebar_item icon="users" route="{{ route('user.index') }}" title="user"></x-sidebar_item>
+                {{-- <x-sidebar_item icon="key" route="{{ route('role.index') }}" title="role"></x-sidebar_item>
+                <x-sidebar_item icon="users" route="{{ route('user.index') }}" title="user"></x-sidebar_item> --}}
                 <x-sidebar_item icon="tag" route="{{ route('master_brand.index') }}" title="master_brand"></x-sidebar_item>
                 <x-sidebar_item icon="filter" route="{{ route('master_kategori.index') }}" title="master_kategori"></x-sidebar_item>
                 <x-sidebar_item icon="asterisk" route="{{ route('master_satuan.index') }}" title="master_satuan"></x-sidebar_item>
